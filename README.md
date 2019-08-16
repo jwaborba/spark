@@ -7,6 +7,7 @@ O comando cache entra em cena como uma técnica de otimização. Ele faz com que
 
 
 --O mesmo código implementado em Spark é normalmente mais rápido que a implementação equivalente em MapReduce. Por quê? 
+
 A resposta dessa pergunta está na arquitetura do MapReduce e do Spark. Ambos são capazes de processar grandes volumes de dados, porém o fazem de forma diferente: 
 O Map Reduce é um algoritmo que processa dados que o faz basicamente em 2 estágios: 
 1.	Map – Onde as desagregações são feitas e os dados são mapeados
@@ -16,12 +17,15 @@ Enquanto Spark se utiliza do cluster (HDFS) ‘colocando’ a JVM em cada node e
 Para a gestão, tanto do HDFS quanto do Spark dentro do cluster é usado o YARN.
 
 --Qual é a função do SparkContext?
+
 SparkContext é um ‘ambiente’ no qual onde suas ações se relacionam ao spark. Ele se relaciona a todas aplicações que interagem com o spark como os gerenciadores de cluster, linguagem python etc...
 
 --Explique com suas palavras o que é Resilient Distributed Datasets (RDD). 
+
 Parcialmente respondido na primeira, mas reforçando, o RDD (Resilient Distributed Dataset) é uma abastração que o Spark faz, um ‘formato’ de objeto onde o spark consegue aplicar suas principais funções como paralelismo. 
 
 --GroupByKey é menos eficiente que reduceByKey em grandes dataset. Por quê?
+
 reduceByKey o dado vai ser combinado primeiro (feito o reduce) e depois agrupado (mesmo conceito de ‘reduce’ do MapReduce)
 GroupByKey não há o processo de ‘reduce’, então toda a massa de dado é vasculhada e agrupada.
 A parte da função ‘reduce’ da função ‘reduceByKey’ é responsável pela melhor performance.
