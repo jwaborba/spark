@@ -38,9 +38,9 @@ A parte da função ‘reduce’ da função ‘reduceByKey’ é responsável p
 4.           . reduceByKey ( _ + _ )
 5. counts . saveAsTextFile ( "hdfs://..." )
 
-linha 1 - o arquivo texto é lido e atribuído ao objeto textFile
-linha 2 - cada linha é colocada em uma coleção de palavras
-linha 3 - é feito um mapeamento de cada linha colocando em chave-valor onde chave é a linha e valor é 1
-linha 4 - os valores são agrupados pela chave (palavra) e os valores de chaves iguais se somam
-linha 5 - o RDD com o MapReduce feito é salvo em arquivo texto
+--linha 1 - o arquivo texto é lido e atribuído ao objeto textFile
+--linha 2 - cada linha é colocada em uma coleção de palavras
+--linha 3 - é feito um mapeamento de cada linha colocando em chave-valor onde chave é a linha e valor é 1
+--linha 4 - os valores são agrupados pela chave (palavra) e os valores de chaves iguais se somam
+--linha 5 - o RDD com o MapReduce feito é salvo em arquivo texto
 
