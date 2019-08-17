@@ -13,7 +13,7 @@ O Map Reduce é um algoritmo que processa dados que o faz basicamente em 2 está
 1.	Map – Onde as desagregações são feitas e os dados são mapeados
 2.	Reduce – onde os dados são novamente agregados de modo que sejam ‘somados’ cada dado idêntico encontrado. Essas agregações são formas menos custosas para se armazenar grandes conjuntos de dados.
 Esse modelo de processamento apesar de funcionar é oneroso computacionalmente pois o MapReduce lerá todas as linhas e aplicará os 2 passos a todos objetos identificados.
-Enquanto Spark se utiliza do cluster (HDFS) ‘colocando’ a JVM em cada node e o processamento acontece em paralelo em cada nó do cluster, assim paralelizando o processamento sem precisar mover toda a massa de dados para um ambiente externo ao HDFS.
+Enquanto Spark se utiliza do cluster (HDFS) ‘colocando’ a JVM em cada node e o processamento acontece em paralelo em cada nó do cluster, assim paralelizando o processamento sem precisar mover toda a massa de dados para um ambiente externo ao cluster.
 Para a gestão, tanto do HDFS quanto do Spark dentro do cluster é usado o YARN.
 
 --Qual é a função do SparkContext?
