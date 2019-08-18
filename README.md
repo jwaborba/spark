@@ -2,7 +2,7 @@
 
 --Qual o objetivo do comando cache em Spark?
 
-Para entender melhor o comando cache é necessário ter o conceito de RDD bem claro. RDD (Resilient Distributed Dataset) é uma abstração que o spark faz para paralelizar o processamento. Em termos práticos, você pode salvar um objeto em RDD.
+Para entender melhor o comando cache é necessário ter o conceito de RDD bem claro. RDD (Resilient Distributed Dataset) é uma abstração que o spark faz para paralelizar o processamento. Em termos práticos, você pode salvar um objeto em formato RDD.
 O comando cache entra em cena como uma técnica de otimização. Ele faz com que o spark salve a informação do RDD em memória para que ela possa ser reusada em estágios futuros. Aumentando assim a performance do processamento.
 
 
