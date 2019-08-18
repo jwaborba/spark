@@ -1,0 +1,35 @@
+from pyspark import SparkContext
+
+print(sc)
+
+#Getting data from http://ita.ee.lbl.gov/html/contrib/NASA-HTTP.html 
+
+#july - ftp://ita.ee.lbl.gov/traces/NASA_access_log_Jul95.gz
+#august - ftp://ita.ee.lbl.gov/traces/NASA_access_log_Aug95.gz
+
+july = sc.textFile('access_log_Jul95')
+july.cache()
+august = sc.textFile('access_log_Aug95')
+august.cache()
+
+july.take(5)
+august.take(5)
+
+print(july, august)
+
+##count distinct hosts
+
+hosts_july = july.flatMap(lambda lines: lines.split(" ")[0]).distinct().count()
+hosts_august = august.flatMap(lambda lines: lines.split(" ")[0]).distinct().count()
+
+print(hosts_july, hosts_august)
+
+#Count Errors 404
+
+july_404 = july.filter(lambda lines: lines.split(" ")[-2] == '404').cache()
+august_404 = august.filter(lambda lines: lines.split(" ")[-2] == '404').cache()
+
+print(august_404.count())
+print(july_404.count())
+
+sc.stop()
